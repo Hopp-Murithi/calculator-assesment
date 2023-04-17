@@ -121,10 +121,26 @@
           Operation:
         </label>
         <select class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="operation" name="operation">
-          <option value="add">Add</option>
-          <option value="subtract">Subtract</option>
-          <option value="multiply">Multiply</option>
-          <option value="divide">Divide</option>
+          <option value="add" <?php
+                              if ($operation === 'add') {
+                                echo ' selected';
+                              }
+                              ?>>Add</option>
+          <option value="subtract" <?php
+                                    if ($operation === 'subtract') {
+                                      echo ' selected';
+                                    }
+                                    ?>>Subtract</option>
+          <option value="multiply" <?php
+                                    if ($operation === 'multiply') {
+                                      echo ' selected';
+                                    }
+                                    ?>>Multiply</option>
+          <option value="divide" <?php
+                                  if ($operation === 'divide') {
+                                    echo ' selected';
+                                  }
+                                  ?>>Divide</option>
         </select>
       </div>
       <div class="flex items-center justify-between">
@@ -133,8 +149,8 @@
         </button>
         <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="reset">
           <?php
-                  echo htmlspecialchars($result, ENT_QUOTES);
-                  ?>
+          echo htmlspecialchars($result, ENT_QUOTES);
+          ?>
         </button>
       </div>
     </form>
